@@ -15,7 +15,7 @@ inputFile = input("Enter the student file name:")
 outputFile = inputFile + "_out.csv"
 
 with open(inputFile, 'r') as infile, open(outputFile, 'w', newline='') as outfile:
-    read = csv.read(infile)
+    reader = csv.reader(infile)
     writer = csv.writer(outfile)
 
     for row in reader:
