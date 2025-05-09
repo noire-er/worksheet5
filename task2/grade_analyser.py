@@ -19,6 +19,9 @@ with open(inputFile, 'r') as infile, open(outputFile, 'w', newline='') as outfil
     writer = csv.writer(outfile)
 
     for row in reader:
+        if not row or not row[0].isdigit():
+            continue
+        
         student_id = row[0]
         grades = [int(g) for g in row[1:] if g.strip() != '']
 
